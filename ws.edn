@@ -1,0 +1,235 @@
+{:bases
+ [{:name "cli",
+   :type "base",
+   :paths {:src ["src"], :test ["test"]},
+   :namespaces
+   {:src
+    [{:name "cli",
+      :namespace "myapp.cli",
+      :file-path
+      "/home/hukka/repos/poly-testing/bases/cli/src/myapp/cli.clj",
+      :imports ["clojure.test" "myapp.mycomponent.interface"]}],
+    :test
+    [{:name "cli-test",
+      :namespace "myapp.cli-test",
+      :file-path
+      "/home/hukka/repos/poly-testing/bases/cli/test/myapp/cli_test.clj",
+      :imports ["clojure.test"]}]},
+   :lib-deps {},
+   :lines-of-code {:src 13, :test 6},
+   :lib-imports {:src ["clojure.test"], :test ["clojure.test"]},
+   :interface-deps {:src ["mycomponent"], :test []}}],
+ :changes
+ {:since "stable",
+  :since-sha "b1be382e5058c1357b56ad06bee6017fefbaf478",
+  :changed-files
+  ["components/mycomponent/src/myapp/mycomponent/core.clj"],
+  :git-diff-command
+  "git diff b1be382e5058c1357b56ad06bee6017fefbaf478 --name-only",
+  :changed-components ["mycomponent"],
+  :changed-bases [],
+  :changed-projects [],
+  :changed-or-affected-projects ["cli" "development"],
+  :project-to-indirect-changes
+  {"cli" {:src ["cli"], :test []},
+   "development" {:src ["cli"], :test []}},
+  :project-to-bricks-to-test
+  {"cli" ["cli" "mycomponent"], "development" []},
+  :project-to-projects-to-test {"cli" [], "development" []}},
+ :components
+ [{:lines-of-code {:src 14, :test 7},
+   :interface
+   {:name "mycomponent",
+    :definitions [{:name "foo", :type "function", :parameters []}]},
+   :namespaces
+   {:src
+    [{:name "interface",
+      :namespace "myapp.mycomponent.interface",
+      :file-path
+      "/home/hukka/repos/poly-testing/components/mycomponent/src/myapp/mycomponent/interface.clj",
+      :imports ["myapp.mycomponent.core"]}
+     {:name "core",
+      :namespace "myapp.mycomponent.core",
+      :file-path
+      "/home/hukka/repos/poly-testing/components/mycomponent/src/myapp/mycomponent/core.clj",
+      :imports ["clojure.test"]}],
+    :test
+    [{:name "mycomponent-test",
+      :namespace "myapp.mycomponent-test",
+      :file-path
+      "/home/hukka/repos/poly-testing/components/mycomponent/test/myapp/mycomponent_test.clj",
+      :imports ["clojure.test" "mycomponent.core"]}]},
+   :lib-imports
+   {:src ["clojure.test"], :test ["clojure.test" "mycomponent.core"]},
+   :name "mycomponent",
+   :paths {:src ["src"], :test ["test"]},
+   :type "component",
+   :interface-deps {:src [], :test []},
+   :lib-deps {}}],
+ :interfaces
+ [{:name "mycomponent",
+   :type "interface",
+   :definitions [{:name "foo", :type "function", :parameters []}],
+   :implementing-components ["mycomponent"]}],
+ :messages [],
+ :name "poly-testing",
+ :paths
+ {:existing
+  ["bases/cli/src"
+   "bases/cli/test"
+   "components/mycomponent/src"
+   "components/mycomponent/test"],
+  :missing [],
+  :on-disk
+  ["bases/cli/src"
+   "bases/cli/test"
+   "components/mycomponent/src"
+   "components/mycomponent/test"]},
+ :projects
+ [{:lines-of-code {:src 0, :test 0, :total {:src 54, :test 26}},
+   :namespaces {},
+   :base-names {:src ["cli"], :test ["cli"]},
+   :lib-imports
+   {:src ["clojure.test"], :test ["clojure.test" "mycomponent.core"]},
+   :is-dev false,
+   :name "cli",
+   :paths
+   {:src ["bases/cli/src" "components/mycomponent/src"],
+    :test ["bases/cli/test" "components/mycomponent/test"]},
+   :type "project",
+   :maven-repos
+   {"central" {:url "https://repo1.maven.org/maven2/"},
+    "clojars" {:url "https://repo.clojars.org/"}},
+   :alias "cli",
+   :project-dir "/home/hukka/repos/poly-testing/projects/cli",
+   :lib-deps
+   {:src
+    {"org.clojure/clojure"
+     {:version "1.11.1", :type "maven", :size 4105111},
+     "org.slf4j/jcl-over-slf4j"
+     {:version "1.7.30", :type "maven", :size 16537},
+     "org.slf4j/jul-to-slf4j"
+     {:version "1.7.30", :type "maven", :size 4592},
+     "org.clojure/tools.deps.alpha"
+     {:version "0.12.985", :type "maven", :size 60822},
+     "org.slf4j/osgi-over-slf4j"
+     {:version "1.7.30", :type "maven", :size 5478},
+     "org.slf4j/slf4j-api"
+     {:version "1.7.30", :type "maven", :size 41472},
+     "ch.qos.logback/logback-classic"
+     {:version "1.2.3", :type "maven", :size 290339},
+     "org.slf4j/log4j-over-slf4j"
+     {:version "1.7.30", :type "maven", :size 23702}}},
+   :config-filename
+   "/home/hukka/repos/poly-testing/projects/cli/deps.edn",
+   :component-names {:src ["mycomponent"], :test ["mycomponent"]},
+   :deps
+   {"cli" {:src {:direct ["mycomponent"]}, :test {}},
+    "mycomponent" {:src {}, :test {}}}}
+  {:lines-of-code {:src 0, :test 0, :total {:src 54, :test 26}},
+   :namespaces {},
+   :base-names {:src ["cli"], :test ["cli"]},
+   :lib-imports
+   {:src ["clojure.test"], :test ["clojure.test" "mycomponent.core"]},
+   :is-dev true,
+   :name "development",
+   :paths
+   {:src ["bases/cli/src" "components/mycomponent/src"],
+    :test ["bases/cli/test" "components/mycomponent/test"]},
+   :type "project",
+   :maven-repos
+   {"central" {:url "https://repo1.maven.org/maven2/"},
+    "clojars" {:url "https://repo.clojars.org/"}},
+   :alias "dev",
+   :project-dir "/home/hukka/repos/poly-testing/development",
+   :unmerged
+   {:paths
+    {:src ["bases/cli/src" "components/mycomponent/src"],
+     :test ["bases/cli/test" "components/mycomponent/test"]},
+    :lib-deps
+    {:src
+     {"org.clojure/clojure"
+      {:version "1.11.1", :type "maven", :size 4105111}}}},
+   :lib-deps
+   {:src
+    {"org.clojure/clojure"
+     {:version "1.11.1", :type "maven", :size 4105111}}},
+   :config-filename "/home/hukka/repos/poly-testing/deps.edn",
+   :component-names {:src ["mycomponent"], :test ["mycomponent"]},
+   :deps
+   {"cli" {:src {:direct ["mycomponent"]}, :test {}},
+    "mycomponent" {:src {}, :test {}}}}],
+ :settings
+ {:vcs
+  {:name "git",
+   :is-git-repo true,
+   :branch "main",
+   :git-root "/home/hukka/repos/poly-testing",
+   :auto-add false,
+   :stable-since {:sha "b1be382e5058c1357b56ad06bee6017fefbaf478"},
+   :polylith
+   {:repo "https://github.com/polyfy/polylith.git", :branch "master"}},
+  :top-namespace "myapp",
+  :interface-ns "interface",
+  :default-profile-name "default",
+  :active-profiles #{},
+  :tag-patterns {:stable "stable-*", :release "v[0-9]*"},
+  :color-mode "dark",
+  :compact-views #{},
+  :user-config-filename "/home/hukka/.config/polylith/config.edn",
+  :empty-character ".",
+  :thousand-separator ",",
+  :profile-to-settings {},
+  :projects
+  {"development"
+   {:alias "dev",
+    :test
+    {:create-test-runner
+     [polylith.clj.core.clojure-test-test-runner.interface/create]}},
+   "cli"
+   {:alias "cli",
+    :test
+    {:create-test-runner
+     [polylith.clj.core.clojure-test-test-runner.interface/create]}}},
+  :user-home "/home/hukka",
+  :m2-dir "/home/hukka/.m2"},
+ :user-input
+ {:args ["ws" "out:ws.edn"],
+  :cmd "ws",
+  :is-commit false,
+  :is-tap false,
+  :is-search-for-ws-dir false,
+  :is-all false,
+  :is-compact false,
+  :is-dev false,
+  :is-latest-sha false,
+  :is-no-changes false,
+  :is-no-exit false,
+  :is-show-brick false,
+  :is-show-workspace false,
+  :is-show-project false,
+  :is-show-loc false,
+  :is-run-all-brick-tests false,
+  :is-run-project-tests false,
+  :is-show-resources false,
+  :is-verbose false,
+  :out "ws.edn",
+  :selected-profiles #{},
+  :selected-projects #{},
+  :unnamed-args []},
+ :version
+ {:release
+  {:name "0.2.15-alpha",
+   :major 0,
+   :minor 2,
+   :patch 15,
+   :revision "alpha",
+   :date "2022-08-10"},
+  :ws {:type :toolsdeps2, :breaking 1, :non-breaking 1}},
+ :ws-dir "/home/hukka/repos/poly-testing",
+ :ws-reader
+ {:name "polylith-clj",
+  :project-url "https://github.com/polyfy/polylith",
+  :language "Clojure",
+  :type-position "postfix",
+  :file-extensions ["clj" "cljc"]}}

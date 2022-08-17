@@ -1,0 +1,12 @@
+{:aliases
+ {:dev {:jvm-opts ["-XX:-OmitStackTraceInFastThrow"]
+        :extra-deps {org.clojure/clojure {:mvn/version "1.11.1"}
+                     mycomponent/mycomponent {:local/root "components/mycomponent"}
+                     cli/cli {:local/root "bases/cli"}}}
+  :test {}
+
+  :poly {:main-opts ["-m" "polylith.clj.core.poly-cli.core"]
+         :extra-deps {polyfy/polylith
+                      {:git/url   "https://github.com/polyfy/polylith"
+                       :sha       "22fe6fe46bbee5c678d7d81bcbbd46d83be98a75"
+                       :deps/root "projects/poly"}}}}}
